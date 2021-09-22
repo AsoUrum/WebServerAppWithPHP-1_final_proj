@@ -1,0 +1,431 @@
+C:#checking string lent without special characters
+mb_strlen($anystring)
+
+#sub string to fine a string in a string. can also add positions to get the exact position of a string
+substr($stringToFind,$positionOfstring);
+
+# get returns the position of a given string
+strpos($product,"#");
+
+#replace a string at a particular  position
+str_replace();
+
+# joins  array elements with separators strings
+
+
+settype() returns a boolean  but can be used to convert varibles
+cast by 
+astring = (bool)thestringtocast
+
+gettype() returns a string
+
+is_numeric() returns a boolean means its a numeric
+is_nan()   returns boolean means its not a numeric
+! is negative of a statement.
+is_integer() return a boolean
+is_boolean()
+is_string()
+
+var_dump()
+print_r()
+
+#########################################################arrays##############################################
+
+sort($myArray)
+rsort($myArray)
+
+asort()
+ksort()
+
+arsort()
+krsort()
+
+array_push($myArray, " ","",)
+
+array_push($myArray, " ","",)
+
+array_pop() remove last element from array
+array_shift() remove the first element of the arry
+ unset() remove and item from a particuler key
+
+
+ 
+######### converting fro JSON string to array 
+		
+          $myArray2 = json_decode($JSON_string);
+          echo "<br><br>";
+          var_dump($myArray2);
+
+
+
+#date 
+        #6 different technigues to mange date
+        $mydate = new DateTime("now");
+       
+        var_dump($mydate);
+        
+        echo (json_encode($mydate));
+         
+        
+        $myDateTime = date_create("now");
+         echo "<br><br>";
+        var_dump($myDateTime);
+         echo "<br><br>";
+         echo(json_encode($myDateTime));
+         echo "<br><br>";
+         
+         $mydate = new DateTime("2020-02-10");
+         echo "<br><br>";
+         
+         echo (json_encode($mydate));
+          echo "<br><br>";
+        echo $mydate->format("y-m-d H:i:s");
+        
+        
+		
+		
+		 #########################################################################
+        # 2 timestamp
+        # very big interger
+        # represent the number of seconds that has elapses from 1970-1-1
+        
+        
+        $myTimeStamp = strtotime("2021-02-25");
+        var_dump($myTimeStamp);
+		
+		
+		
+	##################
+
+numOfTicket = (integer)$numOfTicket; example  for casting
+
+
+#$_SESION()
+
+session_start();
+
+
+
+echo "Copyright &copy; urum ".$mydate->format("Y"); how to copy write 
+
+ $make  = htmlspecialchars($_POST["make"]);
+ $model = htmlspecialchars($_POST["model"]);
+ $year = htmlspecialchars($_POST["year"]);
+
+
+to avoid getting html/js injections 
+        #filter #1
+        echo"<br><br> filter #1 SANITIZE STRING: <br>";
+        echo filter_input(INPUT_POST,"firstName" ,FILTER_SANITIZE_STRING);
+        
+         #filter #2
+        echo"<br><br> filter #2 SANITIZE FULL: <br>";
+        echo filter_input(INPUT_POST,"firstName" ,FILTER_SANITIZE_SPECIAL_CHARS);
+        
+         #filter #3
+        echo"<br><br> filter #3:  htmlspecailchars<br>";
+        echo htmlspecialchars($_POST["save"]);
+        
+          #filter #4
+        echo"<br><br> filter #4:  htmlentitites<br>";
+        echo htmlentities($_POST["save"]);
+        
+
+
+
+------------------------file reader and writting-------------------------------------------
+$fileHandle = fopen("jf.txt", "w");
+        $fclose($fileHandle);
+        ?>
+
+
+$fileHandle = fopen("jf.txt", "w") or die("cannot open the file");
+        
+        fwrite($fileHandle,"this is one computer sold");
+        
+        fclose($fileHandle);
+        
+        echo"done";
+        ?>
+
+
+#file_put_contents("jf.txt","wellcome\r\n", FILE_APPEND);
+
+
+$fileHandle = fopen("jf.txt", "a") or die("cannot open the file");
+        
+        fwrite($fileHandle,"this is one computer sold");
+        
+        fclose($fileHandle);
+        
+        echo"done";
+        ?>
+
+
+
+
+ $title = $_GET["title"];
+        $firstName = $_GET["firstName"];
+        $lastName = $_GET["lastName"];
+        
+        echo "welcome ". $title." ".$firstName ." ". $lastName;
+        
+         if(isset($_GET["color"])){
+             $color = htmlspecialchars($_GET["color"]);
+             
+             //if ($color!="red"&& )
+         }
+             
+
+
+
+
+
+
+ #file_put_contents("jf.txt","wellcome\r\n", FILE_APPEND) or die("cannot open the file");
+        
+        
+        
+$fileHandle = fopen("jf.txt", "r") or die("cannot open the file");
+        
+        ##$content = fread($fileHandle, filesize("jf.txt"));
+        
+        while (! feof($fileHandle)) 
+        {
+           echo  fgets($fileHandle)."<br>";
+            #use json
+           #table cells <td>;
+        }
+        
+        fclose($fileHandle)
+        
+
+
+
+
+global varibles
+
+$_COOKIE;
+$_GET;
+$_POST;
+$_SESSION;
+        
+
+
+
+///////////////////////////////////////////////////////////////////////
+\
+
+
+
+
+
+
+
+<?php
+if (! isset($_SERVER["HTTPS"])|| $_SERVER["HTTPS"] != "on")
+{
+    header('location: https://' . $_SERVER["HTTP_HOST"]. $_SERVER["REQUEST_URI"]);
+}
+session_start();
+#$_SESION()
+$_SESSION["softare"] = "ubuntu";
+$firstname = "";
+function createCookie(){
+    
+    if(isset($_POST['firstname'])){
+        
+//        setcookie('firstname', htmlspecialchars($_POST['firstname']),time()+5,
+//                "",     "",     false,      true);
+//                #path   #domain #secure     #http
+        
+        $_SESSION["firstname"] = htmlspecialchars($_POST['firstname']);
+        header('location: index.php');
+        
+        die();
+    }
+}
+
+function deleteCookie(){
+    
+    if(isset($_POST['firstname']))
+    {
+//        
+//        setcookie('firstname', "",time()- 60*60,
+//                "",     "",     false,      true);
+//                #path   #domain #secure     #http
+        
+        session_destroy();
+        header('location: index.php');
+        
+        die();
+    }
+}
+
+function readCookie(){
+    
+    global $firstname;
+    if(isset($_COOKIE['firstname']))
+    { 
+        $firstname = htmlspecialchars($_COOKIE['firstname']);
+        
+        setcookie('firstname', $firstname ,time()+5,
+                "",     "",     false,      true);
+        
+    }else {
+        $firstname = "";
+    }
+}
+    
+
+
+if(isset($_POST['login'])){
+                
+    createCookie();
+    echo "welcome" . htmlspecialchars($_POST['firstname']);
+
+}else{
+    
+    if(isset($_POST['logout'])){
+        deleteCookie();
+    }else{
+        
+        readCookie();
+        createCookie();
+        
+    }
+}
+?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <?php
+            
+                
+                if($firstname == ""){
+                    
+                    echo "You need to login to view this page";
+                ?>
+                    <form action="index.php" method="POST">
+                        Firstname:<input type="text" name="firstname"/><!-- comment -->
+                        <input type="submit" name="login" value="login"/><!-- comment -->
+                    </form>
+                <?php
+                }else{
+                    echo "welcome " . $firstname;
+                            ?>
+        <form action="index.php" method="POST">
+            <input type="submit" name="logout" value="Logout"/><!-- comment -->
+        </form>
+        <?php
+                }
+                
+            
+        ?>
+
+    </body>
+</html>;
+
+
+//////////setting my password on mariaDB///////////////////////
+
+\xampp\mysql\bin\mysql.exe -u root -p
+
+\xampp\mysql\bin\mysqladmin.exe -u root password  NEWPASWORD
+
+xampp\mysql\bin\mysqladmin.exe -u root -p password  NEWPASWORD
+
+MariaDB [(none)]> select @@version;
+MariaDB [(none)]> exit;
+root password aso
+
+////////////////////////////////////////////////////////////
+SHOW DATABASES;
+SELECT * FROM INFORMATION_SCHEMA.SCHEMATA
+uuid universal unique identifer
+uuid()
+now()
+
+
+
+SELECT * 
+FROM customers_good  
+INNER JOIN randezvous
+ ON customers_good.customer_id = randezvous.customers_id;
+
+
+
+
+SELECT * 
+FROM customers_good  
+	LEFT JOIN randezvous
+ 		ON customers_good.customer_id = randezvous.customers_id
+		 WHERE randezvous_id IS NULL
+
+
+
+
+SHOW GRANTS FOR website@localhost
+
+GRANT USAGE ON *.* TO `website`@`localhost` IDENTIFIED BY PASSWORD '*7EBE55B1C7B9DFDFA8964BD4F64E63664D19FBF4'
+GRANT SELECT ON `jt_test`.`customers_employ_id` TO `website`@`localhost`
+GRANT SELECT ON `jt_test`.`customers_fullname` TO `website`@`localhost`
+GRANT EXECUTE ON PROCEDURE `jt_test`.`customers_insert_one` TO `website`@`localhost`
+GRANT EXECUTE ON PROCEDURE `jt_test`.`p_customers_select_one` TO `website`@`localhost`
+GRANT EXECUTE ON PROCEDURE `jt_test`.`customers_update_employe_id` TO `website`@`localhost`
+
+
+connecting to database
+there re three different library
+1   PDO (php data object ) can connect 12 db at a time( errors are much  difficalut to debug)
+2 mysql
+mysqli
+
+
+$connection = new PDO("mysql:host=localhost; dbname=jf_test","website2","123" )
+ #coonect to database using PDO
+       $connection = new PDO("mysql:host=localhost; dbname=jt_test","website","aso" );
+       var_dump($connection);
+       
+       #set the PDO error mode exception , so invalid queries (u wirite ) will be catched
+       $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+       
+       #close the connection
+       $connection = null
+               
+
+  #----------------------------------------------------------------
+               #doing same above  with mysql(object oriented)
+               
+          $connection = new mysqli('localhost', 'website', 'as', 'jt_test');  
+          
+             if($connection->connect_error)  
+             {
+                 #an error occured
+                 die('Connection failed, PHP will have to stop');
+             }
+               
+             #close the connection to the database
+             $connection->close();
+               
+   #--------------------------------------------------------
+               
+               # doing  same above with mtsql(procedural)
+               $connection = mysqli_connect('localhost', 'website', 'aso', 'jt_test');
+               if(! $connection)
+               {
+                   
+                   die('Connection failed:'.mysqli_connect_error($connection));
+                   
+                   
+               }
+               mysqli_close($connection);

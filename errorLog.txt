@@ -1,0 +1,2 @@
+ An error occured in the file C:\xampp\htdocs\1831133\php\php-functions.php at line 1258:Error number 2:Undefined array key "purchase_Id"
+ An error occured in the file C:\xampp\htdocs\1831133\objects\product.php at line 89:Error number 2:Undefined variable $PDOStatement

@@ -1,0 +1,3 @@
+{"prodCode":"p1831133","firstName":"URUM","lastName":"BONE ASO","city":"MONTREAL","comment":"MID TERM PROJECT","price":"120","quantity":"1","subTotal":120,"taxes":14.46,"grandTotal":134.46}
+{"prodCode":"p1831133","firstName":"BONE ASO","lastName":"URUM","city":"LASALLE","comment":"COLLEGE","price":"1588","quantity":"2","subTotal":3176,"taxes":382.71,"grandTotal":3558.71}
+{"prodCode":"P18311URM","firstName":"ASO","lastName":"BONE","city":"URUM","comment":"MY PROJECT","price":"520","quantity":"3","subTotal":1560,"taxes":187.98,"grandTotal":1747.98}

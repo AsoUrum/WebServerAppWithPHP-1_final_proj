@@ -1,0 +1,169 @@
+
+/*#Developer                       Date                 comments
+#Urum bone aso(1831133)           Feb. 21, 2021          added styles for the project
+
+#Urum bone aso(1831133)             feb. 26,2021        update my review his  to match what is request by the teacher
+
+#Urum bone aso(1831133)             mar. 10 ,2021        modified some css
+*/
+
+
+
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#5BC3F0;
+    width: 100%;
+    overflow: scroll;
+    height: 400px;
+    
+    
+    
+}
+.print{
+    background-color: white;
+}
+
+.topNav{
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: #E06363;
+    border : black 2px solid;
+    
+/*    text-align: center;*/
+    
+}
+.topNav a{
+    
+    padding-right: 15px;
+    color: #9E60F7;
+    
+}
+
+footer{
+    
+    margin-top: 100px;
+    text-align: center;
+}
+
+.myForm {
+    
+   position: absolute;
+   margin-left:  500px;
+   width: 50%;
+       
+  
+        
+}  
+    
+    
+    
+    
+    
+    
+
+
+/*.myForm label{
+    
+    float: left;
+    margin-right: 200px;
+    margin-left: 20px;
+    
+    
+}*/
+
+.myForm input,textArea{
+/*    text-align:  center;
+    padding-left: 0px;
+    margin-left:0px;*/
+   width: 70%;
+   border-radius: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+
+ 
+  
+}
+    .myForm h1{
+    text-align: center;
+    
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 100px;
+}
+
+
+.table th{
+   
+    width : auto;
+    border : solid #F7BB60 5px;
+    float:  center;
+    text-align: center;
+}
+.table td{
+    
+    width : auto;
+    border : solid #CCD55C 2px;
+    float:  center;
+    text-align: center;
+    
+    
+    
+}
+
+
+
+
+.spanColor{
+    color : red;
+}
+
+.ads{
+    width: 50%;
+/*    height: 500px;*/
+    height: 90%;
+    margin-left: auto;
+    margin-right: auto; 
+    display: block;
+  
+}
+
+.ads2{
+/*    width: 500px;
+    height: 500px;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+    width: 30%;
+}
+
+
+.stared:after{
+    content:"*";
+    color : red;
+}
+
+.changeColor1{
+    color: red;
+}
+
+.changeColor2{
+    color: orange;
+}
+
+.changeColor3{
+    color: green;
+}
+
+
+
+
